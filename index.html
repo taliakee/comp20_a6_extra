@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Extra Credit</title>
+    </head>
+    <body>
+        <style>
+            input { width: 200px; border: 1px solid #000; padding: 5px; }
+            label { width: 200px; float: left; margin: 0 20px 0 0; }
+        </style>
+        <script>
+            function switchSides(){
+                var curr_val = document.getElementById("myButton").value 
+                var the_text = ""
+                if (curr_val == "-->"){
+                    document.getElementById("myButton").value = "<--"
+                    the_text = document.getElementById("firstBox").value
+                    document.getElementById("firstBox").value = ""
+                    document.getElementById("secondBox").value = the_text
+
+                }
+                else {
+                    document.getElementById("myButton").value = "-->"
+                    the_text = document.getElementById("secondBox").value
+                    document.getElementById("secondBox").value = ""
+                    document.getElementById("firstBox").value = the_text
+                }
+            }
+        </script>
+        <form>
+            <label for="mytext">
+              <input type="text" id="firstBox" />
+            </label>
+            <label for="mytext">
+                <input type="button" id="myButton" value="-->" onclick="switchSides()">
+            </label>
+            <label for="mytext">
+              <input type="text" id="secondBox" />
+            </label>
+          </form>
+    </body>
+</html>
